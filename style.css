@@ -1,0 +1,69 @@
+
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa7bf;
+  --accent:#7dd3fc;
+  --text:#e6eef8;
+  --maxw:900px;
+  --glass: rgba(255,255,255,0.03);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#061022 0%, #071526 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+.container{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:28px;
+}
+.site-header{
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  position:sticky;
+  top:0;
+  background:transparent;
+  z-index:50;
+}
+.site-header .container{display:flex;align-items:center;gap:20px;justify-content:space-between}
+.name{font-size:20px;margin:0;color:var(--accent)}
+.nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;padding:6px 8px;border-radius:6px}
+.nav a:hover{color:var(--text);background:rgba(255,255,255,0.02)}
+.nav .cta{background:linear-gradient(90deg,#0369a1,#06b6d4);color:#012; padding:6px 10px;border-radius:8px;font-weight:600}
+
+.hero{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:28px;
+  background:linear-gradient(180deg, rgba(125,211,252,0.04), transparent);
+  border-radius:10px;
+  margin:18px 0;
+}
+.hero h2{margin:0 0 8px 0}
+.meta{color:var(--muted);font-size:14px;margin-top:8px}
+
+section{margin:18px 0}
+h3{margin:0 0 10px 0;color:var(--accent);font-size:16px}
+.card{background:var(--card);padding:12px;border-radius:8px;margin:10px 0;border:1px solid rgba(255,255,255,0.02)}
+.muted{float:right;color:var(--muted);font-size:13px}
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.skills-grid div{background:var(--glass);padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+
+ul{margin:8px 0 0 18px}
+footer.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:20px 0;margin-top:30px;text-align:center;color:var(--muted);font-size:14px}
+
+/* Responsive */
+@media (max-width:720px){
+  .skills-grid{grid-template-columns:1fr}
+  .site-header .container{flex-direction:column;align-items:flex-start;gap:12px}
+  .nav{gap:8px}
+  .hero{flex-direction:column;align-items:flex-start}
+}
